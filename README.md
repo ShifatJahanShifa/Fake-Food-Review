@@ -1,6 +1,9 @@
 # Bangla Fake Food Review Detection System
 A Bangla Fake Food Review Detection System is a technological solution designed to identify and filter fake or deceptive reviews in the Bangla language, Romanized Bangla language related to food items. It leverages natural language processing (NLP) techniques, machine learning algorithms, and sentiment analysis to distinguish between authentic and fraudulent reviews.
 
+## Team: Let's Tour Alan World
+Members: Shifat Jahan Shifa (1301), Swadhin Pal (1302), Adity Khisa (1334)
+
 ## AI Methods 🛠️
 
 ### Natural Language Processing (NLP) 🌐
