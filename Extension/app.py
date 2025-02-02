@@ -8,19 +8,13 @@ import dill as pickle
 app = Flask(__name__)
 CORS(app)
 
-try:
-    with open('best_model_hoi.pkl', 'rb') as f:
-        model = pickle.load(f)
-except (FileNotFoundError, pickle.UnpicklingError) as e:
-    model = None
-    print(f"Error loading model: {e}")
+with open('best_model_hoi (4).pkl', 'rb') as f:
+    model = pickle.load(f)
 
-try:
-    with open('best_vectorizer_hoi.pkl', 'rb') as f:
-        vectorizer = pickle.load(f)
-except (FileNotFoundError, pickle.UnpicklingError) as e:
-    vectorizer = None
-    print(f"Error loading vectorizer: {e}")
+with open('best_vectorizer_hoi (4).pkl', 'rb') as f:
+    vectorizer = pickle.load(f)
+
+
 
 
 @app.route('/')
@@ -29,13 +23,15 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    text = request.form.get('text')
+    # text = request.form.get('text')
+    data = request.get_json()  # Get JSON input
+    text = data.get('text') 
     if text is not None:
         text_transformed = vectorizer.transform([text])
 
-        prediction = model.predict(text_transformed)[0]
+        prediction = model.predict(text_transformed)
 
-        return jsonify({'prediction': int(prediction)})
+        return jsonify({'prediction': int(prediction[0])})
     else:
         return jsonify({'error': 'Input text not provided.'})
 

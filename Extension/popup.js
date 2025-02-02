@@ -24,7 +24,8 @@ form.addEventListener('submit', async (event) => {
  
       const prediction = (await response.json()).prediction;
       const resultDiv = document.getElementById('prediction-result');
-      resultDiv.innerText = prediction === 0 ? 'The news is Real' : 'The news is Fake';
+      console.log("debugg ", prediction);
+      resultDiv.innerText = prediction === 0 ? 'The reivew is Fake' : 'The review is Real';
     } else {
       console.error('Request failed:', response.status);
     }

@@ -9,14 +9,14 @@ app = Flask(__name__)
 CORS(app)
 
 try:
-    with open('best_model_hoi.pkl', 'rb') as f:
+    with open('best_model_hoi (4).pkl', 'rb') as f:
         model = pickle.load(f)
 except (FileNotFoundError, pickle.UnpicklingError) as e:
     model = None
     print(f"Error loading model: {e}")
 
 try:
-    with open('best_vectorizer_hoi.pkl', 'rb') as f:
+    with open('best_vectorizer_hoi (4).pkl', 'rb') as f:
         vectorizer = pickle.load(f)
 except (FileNotFoundError, pickle.UnpicklingError) as e:
     vectorizer = None
